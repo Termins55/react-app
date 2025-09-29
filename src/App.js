@@ -6,7 +6,7 @@ import Header from "./components/Header";
 // або фото користувача, якщо він залогінився
 // або кнопку login/registration
 function App() {
-  const isLogin = false;
+  const isLogin = true;
   return <Header isLogin={isLogin}/>;
 }
 

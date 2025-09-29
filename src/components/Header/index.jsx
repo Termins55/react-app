@@ -1,5 +1,6 @@
 import userItem from "./user-icon.jpg";
 import logo from "./logo.jpg";
+import styles from './Header.module.css'
 
 function Header(props) {
   const { isLogin } = props;
@@ -21,10 +22,10 @@ function Header(props) {
   //   return <header>{isLogin && <img src={userItem} alt="" />}</header>;
 
   return (
-    <header>
-      <img src={logo} alt="logo" />
+    <header className={styles.container}>
+      <img className={styles.logo} src={logo} alt="logo" />
       {isLogin ? (
-        <img src={userItem} alt="user" />
+        <img className={styles.userImg} src={userItem} alt="user" />
       ) : (
         <div>
           <button>Login</button>
