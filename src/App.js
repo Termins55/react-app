@@ -2,8 +2,8 @@
 // import Counter from "./components/Counter";
 // import Header from "./components/Header";
 import { Component } from "react";
-import StopWatch from "./components/StopWatch";
-import { isVisible } from "@testing-library/user-event/dist/utils";
+// import StopWatch from "./components/StopWatch";
+import ViewPortParams from "./components/ViewPortParams";
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class App extends Component {
         <button onClick={this.handleClick}>
           {isVisible ? "Unmount" : "Mount"}
         </button>
-        {isVisible && <StopWatch />}
+        {isVisible && <ViewPortParams />}
       </>
     );
   }
