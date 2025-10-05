@@ -2,7 +2,8 @@
 // import Counter from "./components/Counter";
 // import Header from "./components/Header";
 import { Component } from "react";
-import StopWatch from "./components/StopWatch";
+// import StopWatch from "./components/StopWatch";
+import AnimalSlider from "./components/AnimalSlider";
 // import ViewPortParams from "./components/ViewPortParams";
 
 class App extends Component {
@@ -26,7 +27,7 @@ class App extends Component {
         <button onClick={this.handleClick}>
           {isVisible ? "Unmount" : "Mount"}
         </button>
-        {isVisible && <StopWatch />}
+        {isVisible && <AnimalSlider />}
       </>
     );
   }
