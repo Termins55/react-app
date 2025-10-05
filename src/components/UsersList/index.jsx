@@ -1,10 +1,10 @@
 import { Component } from "react";
+import UsersListItem from "./UsersListItem";
 
 // Списки і ключі
 // 1 Реакт вміє рендерити масиви
-// 2 Кожен елемент, що повторюється, повинен мати проп key 
+// 2 Кожен елемент, що повторюється, повинен мати проп key
 //   (унікальний і однозначний для кожного елементу масиву, найчастіше id)
-
 
 const usersData = [
   { id: 1, firstName: "Test", lastName: "Testovich" },
@@ -29,19 +29,12 @@ class UsersList extends Component {
       ...newUsers[foundIndex],
       isSelected: !newUsers[foundIndex].isSelected,
     };
-    this.setState({users: newUsers})
+    this.setState({ users: newUsers });
   };
 
-  mapUser = (u, i) => {
-    const inlineStyle = {
-      backgroundColor: u.isSelected ? "yellow" : "transparent",
-    };
+  mapUser = (u) => {
     // прописати обробник на зміну isSelected на протилежне значення
-    return (
-      <li key={u.id} style={inlineStyle} onClick={() => this.selectUser(u.id)}>
-        {u.firstName} {u.lastName}
-      </li>
-    );
+    return <UsersListItem key={u.id} user={u} selectUser={this.selectUser} />;
   };
 
   render() {
