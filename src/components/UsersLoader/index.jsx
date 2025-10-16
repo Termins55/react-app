@@ -20,8 +20,6 @@ class UsersLoader extends Component {
     getUsers({
       page: currentPage,
       results: 5,
-      seed: "pe2022",
-      inc: ["name", "gender", "email", "login"],
     })
       .then((data) => this.setState({ users: data.results }))
       .catch((e) => this.setState({ error: e }))
