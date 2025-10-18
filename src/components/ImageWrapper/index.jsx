@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./ImageWrapper.module.sass";
 
 // проброс пропсів
@@ -13,4 +14,4 @@ function ImageWrapper({ width, height, children, ...restProps }) {
   );
 }
 
-export default ImageWrapper;
+
