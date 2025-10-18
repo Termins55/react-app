@@ -14,4 +14,15 @@ function ImageWrapper({ width, height, children, ...restProps }) {
   );
 }
 
+ImageWrapper.defaultProps = {
+  width: "300px",
+  height: "200px",
+};
 
+ImageWrapper.propTypes = {
+  children: PropTypes.element.isRequired,
+  width: PropTypes.string,
+  height: PropTypes.string,
+};
+
+export default ImageWrapper;
