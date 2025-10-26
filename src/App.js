@@ -36,11 +36,11 @@ class App extends Component {
     });
     return (
       // 2
-      <ThemeContext value={{ theme, setTheme: this.setTheme }}>
+      <ThemeContext.Provider value={{ theme, setTheme: this.setTheme }}>
         <div className={pageClassName}>
           <UserPage />
         </div>
-      </ThemeContext>
+      </ThemeContext.Provider>
     );
   }
 }
