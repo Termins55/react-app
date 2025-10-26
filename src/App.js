@@ -27,6 +27,22 @@ class App extends Component {
     this.setState({ theme: newTheme });
   };
 
+    componentDidMount() {
+    const storageTheme = window.localStorage.getItem('theme');
+
+    if (storageTheme) {
+      this.setState({ theme: storageTheme });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { theme } = this.state;
+
+    if (theme !== prevState.theme) {
+      window.localStorage.setItem('theme', theme);
+    }
+  }
+
   render() {
     const { theme } = this.state;
     const pageClassName = classNames({
