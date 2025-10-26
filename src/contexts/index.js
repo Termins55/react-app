@@ -1,1 +1,1 @@
-export { default as ThemeContaxt } from "./ThemeContaxt";
+export { default as ThemeContext } from "./ThemeContext";
