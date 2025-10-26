@@ -22,6 +22,11 @@ class App extends Component {
       theme: PINK,
     };
   }
+  // 1
+  setTheme = (newTheme) => {
+    this.setState({ theme: newTheme });
+  };
+
   render() {
     const { theme } = this.state;
     const pageClassName = classNames({
@@ -30,7 +35,8 @@ class App extends Component {
       [styles.pinkTheme]: theme === PINK,
     });
     return (
-      <ThemeContext value={theme}>
+      // 2
+      <ThemeContext value={{ theme, setTheme: this.setTheme }}>
         <div className={pageClassName}>
           <UserPage />
         </div>
