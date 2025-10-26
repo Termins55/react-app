@@ -1,29 +1,21 @@
-import {
-  getDate,
-  getDay,
-  startOfMonth,
-  startOfWeek,
-  endOfMonth,
-  getWeek,
-  getYear,
-  addDays,
-  parse,
-  isEqual,
-  isSameMonth,
-} from "date-fns";
+import DataProvider from './components/DataProvider/index';
 
-import Calendar from './components/Calendar/index'
+const PhonesLoadedList = props => {
+  const { data: phones, isFetching, error } = props.phonesData;
+  return (
+    <>
+      {isFetching && <div>Loading...</div>}
+      {error && <div>ERROR</div>}
+      <ol>
+        {phones.map(p => (
+          <li key={p.id}>
+            {p.brand} {p.model}: {p.price}
+          </li>
+        ))}
+      </ol>
+    </>
+  );
+};
 
-const WEEK_DAYS = ["SANDAY", "M...", "T", "W", "T", "F", "S"];
-
-function App() {
-  const currentDate = new Date();
-  const date = new Date();
-
-  console.log("date :>> ", getDate(currentDate));
-  console.log("day :>> ", WEEK_DAYS[getDay(currentDate)]);
-
-  return <Calendar />;
-}
-
-export default App;
+// Рендер-проп - функція, яка повідомляє компоненту що необхідно відрендерити
+// Цей патерн дозволяє ділитися логікою
