@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 
 function CounterH() {
+  // useState повертає масив з посиланням на стан і функцією для його зміни
   const [count, setCount] = useState(0);
   const [step, setStep] = useState(1);
 
   const increment = () => {
-    setCount(count + step);
+    // функція для зміни стану може приймати функцію
+    // для обчислення нового стану через старий стан
+    setCount((сount) => count + step);
   };
 
   // decrement
 
   const decrement = () => {
-    setCount(count - step);
+    setCount((count) => count - step);
   };
 
   handleStepChange = ({ target: { value } }) => {
+    // функція для зміни стану може приймати нове значення стану
     setStep(Number(value));
   };
   return (
