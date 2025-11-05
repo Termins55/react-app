@@ -1,6 +1,12 @@
 import React from "react";
-import ClickerCounter from "./components/ClickerCounter";
+import StopWatchH from "./components/StopWatchH";
+import StopWatch from "./components/StopWatch";
 
 export default function App() {
-  return <ClickerCounter/>;
+  return (
+    <>
+      <StopWatch />
+      <StopWatchH />
+    </>
+  );
 }
