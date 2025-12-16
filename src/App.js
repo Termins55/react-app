@@ -1,12 +1,23 @@
-import React from "react";
-import UsersLoaderH from "./UsersLoaderH";
-import UsersLoader from "./components/UsersLoader";
+import React, { createContext, useContext, useState } from "react";
+
+const ThemeContext = createContext();
 
 export default function App() {
+  const [theme, setTheme] = useState("light");
   return (
     <>
-      {/* <UsersLoader /> */}
-      <UsersLoaderH />
+      <ThemeContext.Provider value={theme}>
+        <Child />
+      </ThemeContext.Provider>
     </>
   );
+}
+
+function Child() {
+  return <ChildChild />;
+}
+
+function ChildChild() {
+  const theme = useContext(ThemeContext);
+  return <div>{theme}</div>;
 }
