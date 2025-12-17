@@ -17,7 +17,7 @@ function CounterH() {
     setCount((count) => count - step);
   };
 
-  handleStepChange = ({ target: { value } }) => {
+  const handleStepChange = ({ target: { value } }) => {
     // функція для зміни стану може приймати нове значення стану
     setStep(Number(value));
   };
