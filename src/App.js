@@ -1,28 +1,7 @@
-import { useState } from "react";
-
-// HOC - компонент вищого порядку (функція, яка приймає і повертає компонент)
+import UserInfoForm from "./components/UserInfoForm";
 
 function App() {
-  const InnerComponentWithNewProp = withNewProp(InnerComponent);
-  return <InnerComponentWithNewProp ownProp="ownProp" />;
+  return <UserInfoForm />;
 }
 
 export default App;
-
-function withNewProp(WrappedComponent) {
-  function WrappedComponentWithNewProp(props) {
-    const [someState, setSomeState] = useState("some value");
-    return <WrappedComponent newProp={someState} {...props} />;
-  }
-
-  return WrappedComponentWithNewProp;
-}
-
-function InnerComponent(props) {
-  return (
-    <div>
-      Props: {props.ownProp ?? "ownProp is missing"}
-      {props.newProp ?? "newProp is missing"}
-    </div>
-  );
-}
