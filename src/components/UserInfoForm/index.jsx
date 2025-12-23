@@ -36,7 +36,7 @@ function UserInfoForm() {
               placeholder="Name"
               autoFocus
             />
-            {formikProps.errors.firstName && formikProps.touched.firstName && (
+            {formikProps.errors.firstName && (
               <div>{formikProps.errors.firstName}</div>
             )}
             <button type="submit">Save</button>
