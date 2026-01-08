@@ -1,26 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import getUsers from '../components/api';
+import { useData } from '../hooks';
 
 function UsersLoaderH () {
-  const [users, setUsers] = useState([]);
-  const [isFetching, setIsFetching] = useState(false);
-  const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-
-  const loadUsers = () => {
-    setIsFetching(true);
-    getUsers({
-      page: currentPage,
-      results: 5,
-    })
-      .then(data => setUsers(data.results))
-      .catch(e => setError(e))
-      .finally(() => setIsFetching(false));
-  };
-
-  useEffect(() => {
-    loadUsers();
-  }, [currentPage]);
+  const { data: users, isFetching, error } = useData(getUsers, currentPage);
 
   const nextPage = () => {
     setCurrentPage(currentPage => currentPage + 1);

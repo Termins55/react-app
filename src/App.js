@@ -1,8 +1,8 @@
 import React from 'react';
-import ContactPage from './pages/ContactPage';
+import UsersLoaderH from './UsersLoaderH';
 
 function App () {
-  return <ContactPage />;
+  return <UsersLoaderH />;
 }
 
 export default App;
