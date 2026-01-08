@@ -1,7 +1,7 @@
-import { click } from "@testing-library/user-event/dist/click";
-import React, { useEffect, useState } from "react";
+import { click } from '@testing-library/user-event/dist/click';
+import React, { useEffect, useState } from 'react';
 
-function ClickerCounter() {
+function ClickerCounter () {
   const [clickCount, setClickCount] = useState(0);
 
   useEffect(() => {
@@ -11,14 +11,14 @@ function ClickerCounter() {
   }, [clickCount]);
 
   const handleClick = () => {
-    setClickCount((clickCount) => clickCount + 1);
+    setClickCount(clickCount => clickCount + 1);
   };
 
   useEffect(() => {
-    document.body.addEventListener("click", handleClick);
+    document.body.addEventListener('click', handleClick);
     // скидання ефекту
     return () => {
-      document.body.removeEventListener("click", handleClick);
+      document.body.removeEventListener('click', handleClick);
     };
   }, []);
 

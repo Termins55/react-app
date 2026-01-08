@@ -1,7 +1,7 @@
-import { Component } from "react";
+import { Component } from 'react';
 
 class Counter extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     // початковий стан
     this.state = {
@@ -9,16 +9,16 @@ class Counter extends Component {
     };
   }
 
-  increment = (e) => {
+  increment = e => {
     // setState(зміни стану) => перерендинг сторінки
     this.setState({ count: this.state.count + 1 });
   };
 
-  decrement = (e) => {
+  decrement = e => {
     this.setState({ count: this.state.count - 1 });
   };
   // додати кнопку - і прописати обробник decrement
-  render() {
+  render () {
     return (
       <>
         <Count count={this.state.count} />
@@ -32,6 +32,6 @@ class Counter extends Component {
 
 export default Counter;
 
-function Count({ count }) {
+function Count ({ count }) {
   return <div>Props: {count}</div>;
 }

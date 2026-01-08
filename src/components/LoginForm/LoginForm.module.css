@@ -1,41 +1,40 @@
-.formContainer{
-    margin: 10px auto;
-    padding: 20px;
-    box-shadow: 0 0 5px grey;
-    max-width: 800px;
-    min-width: 320px;
-    width: 100%;
+.formContainer {
+  margin: 10px auto;
+  padding: 20px;
+  box-shadow: 0 0 5px grey;
+  max-width: 800px;
+  min-width: 320px;
+  width: 100%;
 }
 
-.formHeader{
-    text-align: center;
+.formHeader {
+  text-align: center;
 }
 
-.loginForm{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.label{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.inputName{
-
+.inputName {
 }
 
-.input{
-    padding: 10px;
-    outline: none;
+.input {
+  padding: 10px;
+  outline: none;
 }
 
-.inputValid{
-    border: 2px solid green;
+.inputValid {
+  border: 2px solid green;
 }
 
-.inputInvalid{
-    border: 2px solid red;
+.inputInvalid {
+  border: 2px solid red;
 }

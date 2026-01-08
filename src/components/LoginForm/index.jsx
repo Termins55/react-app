@@ -1,13 +1,13 @@
-import { Component } from "react";
-import classNames from "classnames";
-import styles from "./LoginForm.module.css";
+import { Component } from 'react';
+import classNames from 'classnames';
+import styles from './LoginForm.module.css';
 
 // state -> input
 // state <- input
 //        ^
 //     onChange
 
-const INITIAL_VALUES = { email: "", password: "" };
+const INITIAL_VALUES = { email: '', password: '' };
 
 const LOGIN_FORM_REX_EXP = {
   email: /^.+@.+$/,
@@ -15,7 +15,7 @@ const LOGIN_FORM_REX_EXP = {
 };
 
 class LoginForm extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -40,13 +40,13 @@ class LoginForm extends Component {
     });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     // send request
     this.setState(INITIAL_VALUES);
   };
 
-  render() {
+  render () {
     // додати поле для пароля (розмітка + обробник)
     const { email, password, isEmailValid, isPasswordValid } = this.state;
 
@@ -72,9 +72,9 @@ class LoginForm extends Component {
             <span className={styles.inputName}>Email</span>
             <input
               className={emailClassName}
-              type="email"
-              name="email"
-              placeholder="your@mail"
+              type='email'
+              name='email'
+              placeholder='your@mail'
               value={email}
               onChange={this.handleEmailChange}
               autoFocus
@@ -84,15 +84,15 @@ class LoginForm extends Component {
             <span className={styles.inputName}>Password</span>
             <input
               className={passwordClassName}
-              type="password"
-              name="password"
-              placeholder="password"
+              type='password'
+              name='password'
+              placeholder='password'
               value={password}
               onChange={this.handlePasswordChange}
               autoFocus
             ></input>
           </label>
-          <button type="submit">Login</button>
+          <button type='submit'>Login</button>
         </form>
       </div>
     );

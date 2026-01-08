@@ -1,11 +1,13 @@
-function NewsItem(props) {
+function NewsItem (props) {
   const {
     news: { body, title },
   } = props;
-  return <article>
-    <h2>{title}</h2>
-    <p>{body}</p>
-  </article>;
+  return (
+    <article>
+      <h2>{title}</h2>
+      <p>{body}</p>
+    </article>
+  );
 }
 
-export default NewsItem
+export default NewsItem;

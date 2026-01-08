@@ -1,6 +1,6 @@
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSwitcher from '../ThemeSwitcher';
 
-function Header() {
+function Header () {
   return (
     <header>
       <span>Header</span> <ThemeSwitcher />
@@ -8,4 +8,4 @@ function Header() {
   );
 }
 
-export default Header
+export default Header;

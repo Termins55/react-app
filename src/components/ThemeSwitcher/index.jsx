@@ -1,9 +1,9 @@
-import CONSTANTS from "../../constants";
-import { ThemeContext } from "../../contexts";
+import CONSTANTS from '../../constants';
+import { ThemeContext } from '../../contexts';
 
 const { LIGHT, DARK, PINK } = CONSTANTS.THEME;
 
-function ThemeSwitcher() {
+function ThemeSwitcher () {
   return (
     <ThemeContext.Consumer>
       {/* // 3 */}

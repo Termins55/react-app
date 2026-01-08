@@ -1,9 +1,8 @@
-import React from "react";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header1";
+import React from 'react';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header1';
 
-
-function UserPage() {
+function UserPage () {
   return (
     <div>
       <Header />
@@ -13,9 +12,3 @@ function UserPage() {
   );
 }
 export default UserPage;
-
-
-
-
-
-

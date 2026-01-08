@@ -1,8 +1,8 @@
-import { Component } from "react";
-import getUsers from "../api";
+import { Component } from 'react';
+import getUsers from '../api';
 
 class UsersLoader extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.state = {
@@ -21,16 +21,16 @@ class UsersLoader extends Component {
       page: currentPage,
       results: 5,
     })
-      .then((data) => this.setState({ users: data.results }))
-      .catch((e) => this.setState({ error: e }))
+      .then(data => this.setState({ users: data.results }))
+      .catch(e => this.setState({ error: e }))
       .finally(() => this.setState({ isFetching: false }));
   };
 
-  componentDidMount() {
+  componentDidMount () {
     this.loadUsers();
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate (prevProps, prevState) {
     const { currentPage } = this.state;
 
     if (currentPage !== prevState.currentPage) {
@@ -50,7 +50,7 @@ class UsersLoader extends Component {
     }
   };
 
-  render() {
+  render () {
     const { users, isFetching, error } = this.state;
     return (
       <>
@@ -58,10 +58,10 @@ class UsersLoader extends Component {
         {isFetching && <div>Loading. Please waite...</div>}
         {!error && !isFetching && (
           <>
-            <button onClick={this.prevPage}>{"<"}</button>
-            <button onClick={this.nextPage}>{">"}</button>
+            <button onClick={this.prevPage}>{'<'}</button>
+            <button onClick={this.nextPage}>{'>'}</button>
             <ul>
-              {users.map((u) => (
+              {users.map(u => (
                 <li key={u.id}>{JSON.stringify(u)}</li>
               ))}
             </ul>
